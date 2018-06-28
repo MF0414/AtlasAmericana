@@ -10,8 +10,8 @@
 
 import React, {PropTypes} from 'react';
 import s from './styles.css';
-import {title, html} from './index.md';
 import axios from 'axios';
+import StandardMap from '../../components/StandardMap/StandardMap';
 
 import history from '../history';
 class HomePage extends React.Component {
@@ -20,18 +20,15 @@ class HomePage extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    document.title = title;
-  }
 
   gotToYelpCloneExample(){
     history.push('/yelp-clone-example')
   }
   render() {
     return (
-      <div className={s.container}>
-        <div dangerouslySetInnerHTML={{__html: html}}/>
-        <button onClick = {()=>{this.gotToYelpCloneExample()}}>Check Out Yelp Clone Example</button>
+      <div className={s.master}>
+        ATLAS AMERICANA
+        <StandardMap/>
       </div>
     );
   }
